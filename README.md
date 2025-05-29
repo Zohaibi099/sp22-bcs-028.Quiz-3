@@ -1,2 +1,2 @@
-# Java Branch
-This branch contains a simple Java program and Jenkinsfile to compile and run it.
+# Python Branch
+This branch contains a simple Python program and Jenkinsfile to run it.
