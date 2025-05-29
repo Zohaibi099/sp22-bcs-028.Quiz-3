@@ -4,19 +4,22 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Zohaibi099/sp22-bcs-028.Quiz-3.git'
+                // Checkout the main branch from your GitHub repo
+                git branch: 'main', url: 'https://github.com/Zohaibi099/sp22-bcs-028.Quiz-3.git'
             }
         }
 
-        stage('Compile') {
+        stage('Compile Java') {
             steps {
-                bat 'javac src\\Main.java'
+                // Compile the Java file Hello.java inside the Quiz03 folder
+                bat 'javac Hello.java'
             }
         }
 
-        stage('Run') {
+        stage('Run Java') {
             steps {
-                bat 'java -cp src Main'
+                // Run the Hello class from Quiz03 folder (use -cp to specify classpath)
+                bat 'java Hello'
             }
         }
     }
