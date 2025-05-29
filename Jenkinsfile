@@ -16,7 +16,7 @@ pipeline {
 
         stage('Run Script') {
             steps {
-                bat 'python Quiz03\\hello.py'
+                bat 'python hello.py'
             }
         }
     }
