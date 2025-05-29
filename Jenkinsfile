@@ -1,14 +1,22 @@
 pipeline {
     agent any
+
     stages {
-        stage('Compile') {
+        stage('Checkout') {
             steps {
-                sh 'javac Hello.java'
+                git 'https://github.com/Zohaibi099/sp22-bcs-028.Quiz-3.git'
             }
         }
+
+        stage('Compile') {
+            steps {
+                bat 'javac src\\Main.java'
+            }
+        }
+
         stage('Run') {
             steps {
-                sh 'java Hello'
+                bat 'java -cp src Main'
             }
         }
     }
