@@ -1,9 +1,22 @@
 pipeline {
     agent any
+
     stages {
-        stage('Run Python') {
+        stage('Checkout') {
             steps {
-                sh 'python3 hello.py'
+                git branch: 'python', url: 'https://github.com/Zohaibi099/sp22-bcs-028.Quiz-3.git'
+            }
+        }
+
+        stage('Setup Python') {
+            steps {
+                bat 'python --version'
+            }
+        }
+
+        stage('Run Script') {
+            steps {
+                bat 'python Quiz03\\hello.py'
             }
         }
     }
